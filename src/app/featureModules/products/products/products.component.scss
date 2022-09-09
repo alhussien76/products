@@ -1,0 +1,16 @@
+@import "../../../../assets/mixins.scss";
+.page-header {
+    .title {
+    }
+    .breadcrumb {
+        margin-bottom: 1rem;
+    }
+}
+.container {
+    display: flex;
+    .products {
+        margin-left: 1rem;
+    }
+    .filters {
+    }
+}

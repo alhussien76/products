@@ -8,8 +8,9 @@
         height: 3.5rem;
     }
     .content {
+        margin-left: 5%;
         flex: auto;
-        @include flex-div(center, row);
+        @include flex-div(start, start, row);
     }
     .footer {
         height: 4rem;

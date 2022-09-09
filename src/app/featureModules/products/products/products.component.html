@@ -1,1 +1,20 @@
-<p>products works!</p>
+<div class="page-header">
+    <div class="title">
+        <h2> {{selectedCategory ? selectedCategory : 'All products' }}</h2>
+    </div>
+    <div class="breadcrumb">
+        Home / Products {{ selectedCategory ? '/' + selectedCategory : '' }}
+    </div>
+</div>
+<div class="container">
+    <div class="filters">
+        <ng-container *ngIf="categories$ | async as categories">
+            <app-categories-filter [categories]="categories"></app-categories-filter>
+        </ng-container>
+    </div>
+    <div class="products">
+        <ng-container *ngIf="products$ |async as Products">
+            <app-products-view [products]="Products"></app-products-view>
+        </ng-container>
+    </div>
+</div>

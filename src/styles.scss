@@ -12,7 +12,7 @@ body {
     margin: 0.5rem 0rem;
     color: #344054;
 }
-input {
+input:not([type="checkbox"]) {
     padding: 0rem 0.5rem;
     width: 93%;
     height: 30px;

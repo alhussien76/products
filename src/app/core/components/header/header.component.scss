@@ -5,7 +5,7 @@
 
     height: 100%;
     .right-nav {
-        margin-left: 10%;
+        margin-left: 5%;
         width: 25%;
         @include flex-div(space-between, row);
 
@@ -20,7 +20,7 @@
         }
     }
     .left-nav {
-        margin-right: 10%;
+        margin-right: 5%;
         @include flex-div(center, row);
         a {
             text-decoration: none;

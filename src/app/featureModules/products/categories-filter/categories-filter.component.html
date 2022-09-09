@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="filer">
+        <h4 class="filter-title">Products</h4>
+        <div class="category" *ngFor="let category of categories">
+            <input (change)="categorySelected(category,$event)" type="checkbox" [id]="category" [name]="category"
+                [value]="category">
+            <label [for]="category"> {{category}}</label>
+        </div>
+    </div>
+</div>
