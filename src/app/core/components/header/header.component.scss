@@ -1,0 +1,36 @@
+@import "../../../../assets/mixins.scss";
+.navbar {
+    @include flex-div(space-between, row);
+    border-bottom: 1px solid rgb(194 192 192);
+
+    height: 100%;
+    .right-nav {
+        margin-left: 10%;
+        width: 25%;
+        @include flex-div(space-between, row);
+
+        .logo {
+            @include flex-div(center, row);
+            span {
+                margin-left: 4px;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    .left-nav {
+        margin-right: 10%;
+        display: flex;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+@media screen and (max-width: 675px) {
+    .navbar {
+        & .right-nav {
+            width: 40%;
+        }
+    }
+}

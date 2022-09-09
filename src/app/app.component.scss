@@ -1,0 +1,17 @@
+@import "../assets/mixins.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .header {
+        height: 3.5rem;
+    }
+    .content {
+        flex: auto;
+        @include flex-div(center, row);
+    }
+    .footer {
+        height: 4rem;
+    }
+}
