@@ -1,0 +1,40 @@
+@import "../../../../assets/mixins.scss";
+
+.container {
+    @include flex-div(center, row);
+    .form {
+        padding: 0.4rem;
+        .form-header {
+            margin-bottom: 1rem;
+            padding: 0rem 1rem;
+            @include flex-div(center, column);
+            .title {
+                font-weight: 600;
+                font-size: 1.4rem;
+                margin: 0.5rem 0rem;
+                p {
+                    margin: 0px;
+                }
+            }
+            .welcome {
+                font-size: 13px;
+            }
+        }
+        .form-body {
+            margin-top: 1.5rem;
+        }
+        .form-footer {
+            button {
+                outline: none;
+                width: 100%;
+                background: #56d9d9;
+                border: 1px solid #56d9d9;
+                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                border-radius: 8px;
+                color: #344054;
+                cursor: pointer;
+                height: 1.8rem;
+            }
+        }
+    }
+}
