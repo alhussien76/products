@@ -13,7 +13,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  // login user
+  // login user with entered username and password
   login(body: any): Observable<User> {
     return this.http.post<User>('https://dummyjson.com/auth/login', body).pipe(
       tap(() => {
@@ -22,9 +22,16 @@ export class LoginService {
     )
   }
 
+  // save user token in local storage
   saveUserToken(token: string, tokenKey: string) {
     localStorage.setItem(tokenKey, token);
   }
+
+  // remove user token from local storage 
+  removeUserToken(tokenKey: string) {
+    localStorage.removeItem(tokenKey);
+  }
+
   //check if user Logged in or not 
   checkUserActiveToken() {
     // we use qurba-token for token key name in LS 
@@ -32,4 +39,5 @@ export class LoginService {
     const userActive = localStorage.getItem('qurba-token') ? true : false
     this.isLoggedInEmiiter.next(userActive)
   }
+
 }

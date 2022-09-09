@@ -21,9 +21,19 @@
     }
     .left-nav {
         margin-right: 10%;
-        display: flex;
+        @include flex-div(center, row);
         a {
             text-decoration: none;
+        }
+        .cart {
+            margin: 0rem 1rem;
+        }
+        .search-icon {
+            position: relative;
+            left: 8%;
+        }
+        .search-input {
+            padding: 0rem 2rem;
         }
     }
 }
