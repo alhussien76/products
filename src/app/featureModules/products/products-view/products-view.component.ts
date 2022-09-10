@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CartService } from 'src/app/core/util/cart.service';
 import { Product } from '../models/product';
 
 @Component({
@@ -8,13 +9,17 @@ import { Product } from '../models/product';
 })
 export class ProductsViewComponent implements OnInit, OnChanges {
   @Input() products: Product[] = [];
-  constructor() { }
+  constructor(private cartService: CartService) { }
   ngOnChanges(changes: SimpleChanges): void {
 
   }
 
   ngOnInit(): void {
 
+  }
+  // emit clicked card number
+  togleCardItem(productId: number) {
+    this.cartService.cartEmiiter.next(productId);
   }
 
 }

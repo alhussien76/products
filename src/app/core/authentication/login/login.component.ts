@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   // logn in and save user token into local storage
+  // navigate to home page (products)
+
   login(username: string, password: string) {
     const body = { username, password }
     this.LoginService.login(body).pipe(

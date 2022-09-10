@@ -26,8 +26,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getAllProducts();
 
-    // switch source observable (searchedWord) to inner observable to get searched products
-    //  debounceTime delay the source observable emition to specific time (search after 500 ms of writing )
+    // listen to emitted searched word
+    // switch source observable (searched word) to inner observable to get searched products
+    // debounceTime delay the source observable emition to specific time (search after 500 ms of writing )
     this.searchService.searchedWord$.pipe(
       takeWhile(() => this.componentActive),
       debounceTime(700),
@@ -40,8 +41,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       next: (products) => {
         this.products = products.products;
         this.loading = false;
-      },
-
+      }
     })
 
   }

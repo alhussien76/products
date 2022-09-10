@@ -29,6 +29,9 @@
         }
         .cart {
             margin: 0rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
         .search-icon {
             position: relative;
@@ -37,6 +40,15 @@
         .search-input {
             padding-left: 2rem;
             font-size: 1.2rem;
+        }
+        .badge {
+            height: 15px;
+            width: 15px;
+            background-color: #56d9d9;
+            color: #344054;
+            border-radius: 50%;
+            font-size: 12px;
+            @include flex-div(center, row);
         }
     }
 }

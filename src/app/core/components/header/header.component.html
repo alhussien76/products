@@ -14,8 +14,13 @@
         <img class="search-icon" *ngIf="(isLoggedIn$ |async)" src="assets/images/search.png" alt="search icon">
         <input (input)="searchedWordChanged($event)" class="search-input" *ngIf="(isLoggedIn$ |async)" type="search"
             title="search" name="search">
+        <div class="cart">
+            <span class="badge">
+                {{cartProductIds.length}}
+            </span>
+            <img class="cart-img" *ngIf="(isLoggedIn$ |async)" src="assets/images/cart.png" alt="cart">
 
-        <img class="cart" *ngIf="(isLoggedIn$ |async)" src="assets/images/cart.png" alt="cart">
+        </div>
 
         <a (click)="ToLoginPage()" *ngIf="(isLoggedIn$ |async)" routerLink="/auth" class="font-color-gray"> Account </a>
     </div>
