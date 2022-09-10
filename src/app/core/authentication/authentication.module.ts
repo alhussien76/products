@@ -9,8 +9,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LoginComponent,
-
-
   ],
   imports: [
     CommonModule,

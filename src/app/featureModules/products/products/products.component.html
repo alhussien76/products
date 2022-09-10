@@ -1,1 +1,28 @@
-<p>products works!</p>
+<div class="container">
+    <div class="page-header">
+        <div class="title">
+            <h2 class="capitalize"> {{selectedCategory ? selectedCategory : 'All products' }}</h2>
+        </div>
+        <div class="breadcrumb capitalize">
+            Home / Products {{ selectedCategory ? '/ ' + selectedCategory : '' }}
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="filters">
+            <ng-container *ngIf="categories$ | async as categories">
+                <app-categories-filter [categories]="categories" (categoriesEmitter)="categoryChanged($event)">
+                </app-categories-filter>
+            </ng-container>
+        </div>
+        <div *ngIf="products.length && !loading" class="products">
+            <app-products-view [products]="products"></app-products-view>
+        </div>
+        <div *ngIf="!products.length  && !loading " class="empty-state">
+            <app-empty-state></app-empty-state>
+        </div>
+        <!-- TODO:
+            add loading state         
+        -->
+    </div>
+
+</div>

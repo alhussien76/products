@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="products">
+        <app-product-card class="product" *ngFor="let product of products" [product]="product"
+            (productIdEmitter)="togleCardItem($event)">
+        </app-product-card>
+    </div>
+    <!-- TODO:
+        add pagination 
+     -->
+
+</div>

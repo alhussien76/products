@@ -1,0 +1,23 @@
+@import "../../../../assets/mixins.scss";
+.container {
+    @include flex-div(flex-start, column, flex-start);
+    height: 100%;
+    .page-header {
+        .breadcrumb {
+            margin-bottom: 1rem;
+        }
+    }
+    .page-body {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        .products {
+            margin-left: 1rem;
+            flex: 7;
+        }
+        .empty-state {
+            @include flex-div(center, row, center);
+            flex: auto;
+        }
+    }
+}

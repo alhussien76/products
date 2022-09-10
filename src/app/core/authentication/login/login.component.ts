@@ -11,7 +11,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   componentActive: boolean = true;
-  error: string = ''
+  error: string = '';
   constructor(private LoginService: LoginService,
     private router: Router) { }
   ngOnDestroy(): void {
@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   }
+  // logn in and save user token into local storage
+  // navigate to home page (products)
+
   login(username: string, password: string) {
     const body = { username, password }
     this.LoginService.login(body).pipe(
@@ -41,6 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     })
   }
+
+  // call login function with entered credentials
   onSubmit(form: NgForm) {
     this.login(form.value['username'], form.value['password'])
   }

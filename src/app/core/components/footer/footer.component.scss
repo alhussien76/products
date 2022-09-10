@@ -6,7 +6,7 @@ footer {
     height: 100%;
     background-color: #1d2939;
     .logo {
-        margin-left: 10%;
+        margin-left: 5%;
         @include flex-div(center, row);
         span {
             color: white;
@@ -14,7 +14,7 @@ footer {
         }
     }
     .copy-write {
-        margin-right: 10%;
+        margin-right: 5%;
         color: #98a2b3;
     }
 }

@@ -1,0 +1,38 @@
+@import "../../../../assets/mixins.scss";
+.container {
+    height: 100%;
+    @include flex-div(flex-start, column, flex-start);
+
+    .products {
+        @include flex-div(space-around, row, flex-start);
+        height: calc(100vh - 250px);
+        overflow: auto;
+        flex-wrap: wrap;
+        width: 100%;
+        .product {
+            width: 282px;
+            height: 26rem;
+            margin-bottom: 1rem;
+            border: 0.5px solid #d0d0d0;
+            border-radius: 8px;
+            overflow-y: auto;
+            position: relative;
+        }
+    }
+    .paginator {
+        @include flex-div(center, row, center);
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        //@include flex-div(flex-start, row, flex-start);
+        .products {
+            .product {
+                width: 200px !important;
+            }
+        }
+    }
+}

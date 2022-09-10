@@ -5,13 +5,14 @@
     flex-direction: column;
     height: 100%;
     .header {
-        height: 3.5rem;
+        min-height: 4.5rem;
     }
     .content {
+        margin-left: 5%;
         flex: auto;
-        @include flex-div(center, row);
+        //  @include flex-div(flex-start, flex-start, row);
     }
     .footer {
-        height: 4rem;
+        min-height: 4rem;
     }
 }
