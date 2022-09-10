@@ -10,7 +10,7 @@
     .content {
         margin-left: 5%;
         flex: auto;
-        @include flex-div(flex-start, flex-start, row);
+        //  @include flex-div(flex-start, flex-start, row);
     }
     .footer {
         min-height: 4rem;

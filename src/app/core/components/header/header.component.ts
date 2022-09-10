@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, shareReplay } from 'rxjs';
 import { LoginService } from '../../authentication/services/login.service';
+import { SearchService } from '../../util/search.service';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,7 @@ export class HeaderComponent implements OnInit {
     shareReplay()
   )
   constructor(private loginService: LoginService,
+    private searchService: SearchService,
     private router: Router
   ) {
   }
@@ -26,5 +28,8 @@ export class HeaderComponent implements OnInit {
     this.loginService.isLoggedInEmiiter.next(false);
     this.router.navigate(['/auth']);
 
+  }
+  searchedWordChanged(event: any) {
+    this.searchService.searchEmiiter.next(event.target.value);
   }
 }

@@ -3,6 +3,7 @@ $font-color-dark: #344054;
 $font-color-gray: #667085;
 $font-weight-600: 600;
 $font-weight-700: 700;
+$font-weight-800: 800;
 html,
 body {
     margin: 0px;
@@ -60,10 +61,16 @@ input:not([type="checkbox"]) {
 .font-bold-700 {
     font-weight: $font-weight-700;
 }
+.font-bold-800 {
+    font-weight: $font-weight-800;
+}
 .font-color-dark {
     color: $font-color-dark;
 }
 .price {
     color: $font-color-dark;
-    font-weight: $font-weight-700;
+    font-weight: $font-weight-800;
+}
+.currency {
+    font-size: 1.2rem;
 }

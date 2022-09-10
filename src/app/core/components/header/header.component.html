@@ -1,16 +1,19 @@
 <nav class="navbar">
-    <div class="right-nav">
+    <div class="left-nav">
         <div class="logo">
             <img src="assets/images/icon.svg" alt="icon image">
             <span>ClickTik</span>
         </div>
-        <a routerLink="products" class="font-color-gray"> Home </a>
+        <div class="home">
+            <a routerLink="products" class="font-color-gray"> Home </a>
+        </div>
     </div>
-    <div class="left-nav">
+    <div class="right-nav">
         <a *ngIf="!(isLoggedIn$ |async)" routerLink="/auth" class="font-color-gray"> Log in </a>
 
         <img class="search-icon" *ngIf="(isLoggedIn$ |async)" src="assets/images/search.png" alt="search icon">
-        <input class="search-input" *ngIf="(isLoggedIn$ |async)" type="search" title="search" name="search">
+        <input (input)="searchedWordChanged($event)" class="search-input" *ngIf="(isLoggedIn$ |async)" type="search"
+            title="search" name="search">
 
         <img class="cart" *ngIf="(isLoggedIn$ |async)" src="assets/images/cart.png" alt="cart">
 
