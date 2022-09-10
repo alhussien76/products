@@ -5,7 +5,7 @@
 
     .products {
         @include flex-div(space-around, row, flex-start);
-        height: calc(100vh - 310px);
+        height: calc(100vh - 250px);
         overflow: auto;
         flex-wrap: wrap;
         width: 100%;
@@ -31,7 +31,7 @@
         //@include flex-div(flex-start, row, flex-start);
         .products {
             .product {
-                width: 95% !important;
+                width: 200px !important;
             }
         }
     }
