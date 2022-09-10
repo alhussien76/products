@@ -1,0 +1,14 @@
+@import "../../../../assets/mixins.scss";
+.container {
+    @include flex-div(space-around, row, flex-start);
+
+    flex-wrap: wrap;
+    .product {
+        width: 30%;
+        height: 33rem;
+        margin-bottom: 1rem;
+        border: 0.5px solid #d0d0d0;
+        border-radius: 8px;
+        overflow-y: auto;
+    }
+}

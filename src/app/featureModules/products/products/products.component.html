@@ -1,20 +1,21 @@
 <div class="page-header">
     <div class="title">
-        <h2> {{selectedCategory ? selectedCategory : 'All products' }}</h2>
+        <h2 class="capitalize"> {{selectedCategory ? selectedCategory : 'All products' }}</h2>
     </div>
-    <div class="breadcrumb">
-        Home / Products {{ selectedCategory ? '/' + selectedCategory : '' }}
+    <div class="breadcrumb capitalize">
+        Home / Products {{ selectedCategory ? '/ ' + selectedCategory : '' }}
     </div>
 </div>
 <div class="container">
     <div class="filters">
         <ng-container *ngIf="categories$ | async as categories">
-            <app-categories-filter [categories]="categories"></app-categories-filter>
+            <app-categories-filter [categories]="categories" (categoriesEmitter)="categoryChanged($event)">
+            </app-categories-filter>
         </ng-container>
     </div>
     <div class="products">
-        <ng-container *ngIf="products$ |async as Products">
-            <app-products-view [products]="Products"></app-products-view>
-        </ng-container>
+
+        <app-products-view *ngIf="products.length" [products]="products"></app-products-view>
+
     </div>
 </div>

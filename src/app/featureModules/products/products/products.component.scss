@@ -1,7 +1,5 @@
 @import "../../../../assets/mixins.scss";
 .page-header {
-    .title {
-    }
     .breadcrumb {
         margin-bottom: 1rem;
     }
@@ -10,7 +8,6 @@
     display: flex;
     .products {
         margin-left: 1rem;
-    }
-    .filters {
+        flex: 7;
     }
 }

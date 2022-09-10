@@ -5,6 +5,9 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsViewComponent } from './products-view/products-view.component';
 import { CategoriesFilterComponent } from './categories-filter/categories-filter.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 
@@ -12,11 +15,13 @@ import { ProductsComponent } from './products/products.component';
   declarations: [
     ProductsViewComponent,
     CategoriesFilterComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductCardComponent
   ],
   imports: [
-    CommonModule,
-    ProductsRoutingModule
+    SharedModule,
+    ProductsRoutingModule,
+
   ]
 })
 export class ProductsModule { }

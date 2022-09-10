@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-categories-filter',
@@ -7,20 +6,22 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./categories-filter.component.scss']
 })
 export class CategoriesFilterComponent implements OnInit {
-  @Input() categories: string[] = []
-  selectedCategories: string[] = [];
+  @Input() categories: string[] = [];
+  @Output() categoriesEmitter: EventEmitter<string> = new EventEmitter();
+  selectedCategory: string = '';
   constructor() { }
 
   ngOnInit(): void {
   }
   categorySelected(category: string, event: any) {
     if (event.target.checked) {
-      this.selectedCategories.push(category)
+      this.selectedCategory = category;
+      this.categoriesEmitter.emit(category);
     }
     else {
-      let index = this.selectedCategories.indexOf(category);
-      this.selectedCategories.splice(index, 1);
+      this.selectedCategory = '';
+      this.categoriesEmitter.emit('');
     }
-    console.log(this.selectedCategories)
+
   }
 }
